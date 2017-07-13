@@ -4,9 +4,9 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = env => {
   return {
-    entry: __dirname + '/app',
+    entry: __dirname + '/src/app.js',
     output: {
-      path: path.join(__dirname ,'build'),
+      path: path.join(__dirname ,'public'),
       filename: 'bundle.js'
     },
     module: {
@@ -37,21 +37,12 @@ module.exports = env => {
     resolve: {
       extensions: ['.js', '.css', '.scss', '.json'],
       alias: {
-        components: path.resolve(__dirname, 'app', 'components'),
-        api: path.resolve(__dirname, 'app','api'),
-        styles: path.resolve(__dirname, 'app', 'styles'),
-        CountryCodes$: path.resolve(__dirname, 'app','api', 'data', 'CountryCodes.js'),
-        vendor: path.resolve(__dirname, 'app', 'vendor')
+        components: path.resolve(__dirname, 'app', 'components')
       }
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        Tether: 'tether'
-      }),
       new htmlWebpackPlugin({
-       template: path.resolve(__dirname, 'app', 'index.html')
+       template: path.resolve(__dirname, 'src', 'index.html')
       })
     ],
     devServer: {
