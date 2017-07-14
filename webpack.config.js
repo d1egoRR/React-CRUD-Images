@@ -41,6 +41,11 @@ module.exports = env => {
       }
     },
     plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        Tether: 'tether'
+      }),
       new htmlWebpackPlugin({
        template: path.resolve(__dirname, 'src', 'index.html')
       })
