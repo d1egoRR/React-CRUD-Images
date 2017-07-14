@@ -3,6 +3,7 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Gallery from './Gallery';
 
+
 export default class MainComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ export default class MainComponent extends React.Component {
   }
 
   componentDidMount() {
+
     const photos = [
       {img: '1.jpg', caption: 'Rhapsody - Legendary Tales'},
       {img: '2.jpg', caption: 'Rhapsody - Symphony from II'},

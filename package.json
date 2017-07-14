@@ -1,33 +1,29 @@
 {
   "name": "personal-website",
-  "version": "1.0.0",
-  "description": "personal web site",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www",
     "devserver": "webpack-dev-server",
     "webpack": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/d1egoRR/personal-website.git"
-  },
-  "author": "d1egoRR",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/d1egoRR/personal-website/issues"
-  },
-  "homepage": "https://github.com/d1egoRR/personal-website#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.8",
+    "express": "~4.15.2",
     "flag-icon-css": "^2.8.0",
     "font-awesome": "^4.7.0",
     "hover.css": "^2.2.0",
+    "jade": "^1.11.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-select": "^1.0.0-rc.5",
+    "serve-favicon": "^2.4.3",
     "tether": "^1.4.0"
   },
   "devDependencies": {
