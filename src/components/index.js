@@ -3,6 +3,8 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Gallery from './Gallery';
 
+import {getPhotos} from '../api/dataDB';
+
 export default class MainComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -12,16 +14,9 @@ export default class MainComponent extends React.Component {
   }
 
   componentDidMount() {
-
-    const photos = [
-      {img: '1.jpg', caption: 'Rhapsody - Legendary Tales'},
-      {img: '2.jpg', caption: 'Rhapsody - Symphony from II'},
-      {img: '3.jpg', caption: 'Luca Turilli - Prometheus'},
-      {img: '4.jpg', caption: 'Rhapsody - Dark wings'},
-      {img: '5.jpg', caption: 'Rhapsody - A rain flames'},
-      {img: '6.jpg', caption: 'Rhapsody - Symphony from I'}];
-
-    this.setState({photos});
+    getPhotos(photos => {
+      this.setState({photos: photos});
+    });
   }
 
   render() {

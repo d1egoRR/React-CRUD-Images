@@ -1,16 +1,10 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
+import $ from 'jquery';
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-
-export const con = () => {
-  db.once('open', function() {
-    console.log('ok!!!');
+export const getPhotos = (callback) => {
+  $.get(`/photos`, photos => {
+    callback(photos);
   });
 }
-
-
 
 /*
 var mongoose = require('mongoose');
