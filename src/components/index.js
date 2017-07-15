@@ -3,7 +3,6 @@ import Header from './Header';
 import Navbar from './Navbar';
 import Gallery from './Gallery';
 
-
 export default class MainComponent extends React.Component {
   constructor(props) {
     super(props);
