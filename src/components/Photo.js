@@ -6,7 +6,7 @@ export default class Photo extends React.Component {
       <div className='col-lg-4'>
         <div className="photo text-center">
           <div className="thumbnail">
-            <img src={`/images/photos/${this.props.photo}`} alt={this.props.caption} />
+            <img src={this.props.photo} alt={this.props.caption} />
             <div className="caption">
               <h3>{this.props.caption}</h3>
             </div>

@@ -21,8 +21,10 @@ export default class MainComponent extends React.Component {
   }
 
   addPhoto(photo) {
-    savePhoto(photo, photos=> {
-      this.setState({photos: photos});
+    savePhoto(photo, result => {
+      const currentPhotos = this.state.photos;
+      currentPhotos.push(result);
+      this.setState({photos: currentPhotos});
     });
   }
 

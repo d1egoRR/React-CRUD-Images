@@ -44,13 +44,28 @@ app.get('/photos', function(req, res) {
 app.post('/photos', function(req, res) {
   var photo = req.body;
 
-  console.log(photo);
-
   Photos.create(photo, function(err, photos) {
     if (err) {
       throw err;
     }
     res.json(photos);
+  });
+});
+
+app.get('/images/photos', function(req, res) {
+  const imgFolder = __dirname + '/public/images/photos';
+  const fs = require('fs');
+  fs.readdir(imgFolder, function(err, files) {
+    if (err) {
+      return console.error(err);
+    }
+
+    const filesArr = [];
+    files.forEach(function(file) {
+      filesArr.push({name: file});
+    });
+
+    res.json(filesArr);
   });
 });
 

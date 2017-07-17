@@ -10,6 +10,8 @@ export const savePhoto = (photo, callback) => {
   $.post(`/photos`, photo, photos => {
     callback(photos);
   });
+
+
 }
 
 /*
