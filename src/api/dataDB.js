@@ -1,4 +1,5 @@
 var $ = require('jquery');
+var axios = require('axios');
 
 export const getPhotos = (callback) => {
   $.get(`/photos`, photos => {
@@ -10,8 +11,14 @@ export const savePhoto = (photo, callback) => {
   $.post(`/photos`, photo, photos => {
     callback(photos);
   });
+}
 
-
+export const deletePhoto = (photoId, callback) => {
+  axios.delete('/photos/' + photoId, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
 }
 
 /*

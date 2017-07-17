@@ -69,6 +69,17 @@ app.get('/images/photos', function(req, res) {
   });
 });
 
+app.delete('/photos/:_id', function(req, res) {
+  var query = {_id: req.params._id};
+  Photos.remove(query, function(err, photos) {
+    if (err) {
+      console.log('# API DELETE PHOTOS' + err);
+    }
+
+    res.json(photos);
+  });
+});
+
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');

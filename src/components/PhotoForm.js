@@ -42,7 +42,20 @@ export default class PhotoForm extends React.Component {
     findDOMNode(this.refs.caption).value = '';
   }
 
+  onDelete() {
+    const photoId = findDOMNode(this.refs.delete).value;
+    this.props.handleDeletePhoto(photoId);
+  }
+
   render() {
+    const photoList = this.props.photos.map(function(photo) {
+      return (
+        <option value={photo._id} key={photo._id}>
+          {photo.caption}
+        </option>
+      )
+    });
+
     const imgList = this.state.images.map(function(imgArr, i) {
       return(
         <MenuItem
@@ -88,6 +101,23 @@ export default class PhotoForm extends React.Component {
                   Guardar
               </Button>
             </FormGroup>
+          </Panel>
+        </Col>
+
+        <Col xs={6} sm={6}>
+          <Panel>
+            <FormGroup controlId="formControlsSelect">
+              <ControlLabel>Selecionar imagen a borrar</ControlLabel>
+              <FormControl ref='delete' componentClass="select" placeholder="seleccionar">
+                <option value="select">seleccionar</option>
+                {photoList}
+              </FormControl>
+            </FormGroup>
+            <Button
+              bsStyle='danger'
+              onClick={::this.onDelete}>
+                Borrar Imagen
+            </Button>
           </Panel>
         </Col>
       </Row>
