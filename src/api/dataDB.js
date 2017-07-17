@@ -1,7 +1,13 @@
-import $ from 'jquery';
+var $ = require('jquery');
 
 export const getPhotos = (callback) => {
   $.get(`/photos`, photos => {
+    callback(photos);
+  });
+}
+
+export const savePhoto = (photo, callback) => {
+  $.post(`/photos`, photo, photos => {
     callback(photos);
   });
 }

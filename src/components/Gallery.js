@@ -13,7 +13,6 @@ export default class Gallery extends React.Component {
 
     return (
       <div className="row">
-
           <div className='photo-columns'>
             {photos}
         </div>

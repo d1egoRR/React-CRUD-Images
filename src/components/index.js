@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './Header';
 import Navbar from './Navbar';
 import Gallery from './Gallery';
+import PhotoForm from './PhotoForm';
 
-import {getPhotos} from '../api/dataDB';
+import {getPhotos, savePhoto} from '../api/dataDB';
 
 export default class MainComponent extends React.Component {
   constructor(props) {
@@ -19,6 +20,12 @@ export default class MainComponent extends React.Component {
     });
   }
 
+  addPhoto(photo) {
+    savePhoto(photo, photos=> {
+      this.setState({photos: photos});
+    });
+  }
+
   render() {
     const photos = this.state.photos;
 
@@ -29,6 +36,14 @@ export default class MainComponent extends React.Component {
           <div className='col-lg-12'>
             <Header />
             <Navbar />
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-lg-12'>
+            <div className='well'>
+              <PhotoForm handleAddPhoto={::this.addPhoto} />
+            </div>
           </div>
         </div>
 

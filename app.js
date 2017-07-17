@@ -46,8 +46,6 @@ app.post('/photos', function(req, res) {
 
   console.log(photo);
 
-  //photo = {img:'2-jpg', caption:'naaaaaaa'};
-
   Photos.create(photo, function(err, photos) {
     if (err) {
       throw err;
