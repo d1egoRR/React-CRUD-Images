@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Navbar from './Navbar';
+import Menu from './Menu';
 import Gallery from './Gallery';
 import PhotoForm from './PhotoForm';
 
@@ -51,7 +51,7 @@ export default class MainComponent extends React.Component {
         <div className='row'>
           <div className='col-lg-12'>
             <Header />
-            <Navbar />
+            <Menu />
           </div>
         </div>
 
