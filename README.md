@@ -1,5 +1,3 @@
-# personal-website
-
 <p align="center">
   <img src="https://image.ibb.co/jPZDsv/nodejs_logo.png"/>
   <img src="https://image.ibb.co/manBea/react.png"/>
@@ -8,4 +6,4 @@
   <img src="https://image.ibb.co/j8bhkF/express_retina_preview.jpg"/>
 </p>
 
-<p>CRUD images. Without Routes. Without engine views.</p>
+<p>CRUD images (without UPDATE). Without Routes. Without engine views.</p>
